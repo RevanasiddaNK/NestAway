@@ -1,0 +1,38 @@
+{
+  "name": "nestaway",
+  "version": "1.0.0",
+  "description": "Nestaway redefines hospitality, offering you a seamless experience to discover and book unique living spaces. Unlike traditional rentals, Nestaway provides fully managed homes, ensuring a comfortable and hassle-free stay from the moment you book.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Revanasidda N Karigoudar",
+  "license": "ISC",
+  "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.16.0",
+    "bootstrap": "^5.3.3",
+    "cloudinary": "^1.41.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "i": "^0.3.7",
+    "joi": "^17.13.3",
+    "method-override": "^3.0.0",
+    "mongoose": "5.10.x",
+    "mongoose-fuzzy-searching": "^2.0.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^3.1.4",
+    "npm": "^10.8.2",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0",
+    "routes": "^2.1.0",
+    "serve-favicon": "^2.5.0",
+    "starability": "^1.1.0"
+  }
+}

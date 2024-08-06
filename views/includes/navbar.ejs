@@ -1,0 +1,66 @@
+
+<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary p-4">
+  <div class="container-fluid">
+
+    <!-- Navbar Toggler for Mobile View -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Brand Logo and Name -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <h1 class="text-danger fw-bolder mb-0">
+        <i class="bi bi-house-add-fill"></i> <!-- Bootstrap icon -->
+        NestAway
+      </h1>
+    </a>
+
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+        <!-- Search Form -->
+        <li class="nav-item">
+          <form method="get" action="/listings/search" class="input-group">
+            <div class="form-outline" data-mdb-input-init>
+              <input id="search-focus" 
+                <% if (typeof query !== 'undefined' && query) { %> 
+                  value="<%= query %>" 
+                <% } %>
+                type="search" 
+                id="form1" 
+                placeholder="Search your destination"
+                name="searchQuery" 
+                class="form-control searchInput rounded-start-pill" />
+            </div>
+            <button type="submit" class="btn btn-danger rounded-end-pill" data-mdb-ripple-init>
+              <i class="bi bi-search"></i> Search
+            </button>
+          </form>
+        </li>
+
+        <!-- Authentication Links and Checkbox -->
+        <li class="nav-item d-flex align-items-center ms-4">
+          <!-- Display total after taxes Checkbox -->
+          <div class="checkbox-wrapper-14 bg-light bg-gradient d-flex align-items-center border ms-2 p-2">
+            <label for="s1-14" class="ms-2 mb-0 fs-5">Display total after taxes</label>
+            <input id="s1-14" type="checkbox" class="switch ms-2">
+          </div>
+        </li>
+        
+        <!-- User Authentication Links -->
+        <li class="nav-item d-flex align-items-center ms-4">
+          <% if (!currentUser) { %>
+            <a href="/signUp" class="btn btn-outline-dark border-0 fs-4 fw-medium btn-lg ms-2">SignUp</a>
+            <a href="/login" class="btn btn-outline-dark border-0 fs-4 fw-medium btn-lg ms-2">Login</a>
+          <% } else { %>
+            <a href="/listings/new" class="btn btn-outline-dark border-0 fs-4 fw-medium btn-lg ms-2">Add your home</a>
+            <a href="/logout" class="btn btn-outline-dark btn-lg border-0 fs-4 fw-medium ms-2">Logout</a>
+          <% } %>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
