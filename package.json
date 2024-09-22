@@ -4,6 +4,8 @@
   "description": "Nestaway redefines hospitality, offering you a seamless experience to discover and book unique living spaces. Unlike traditional rentals, Nestaway provides fully managed homes, ensuring a comfortable and hassle-free stay from the moment you book.",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "build" : "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Revanasidda N Karigoudar",
