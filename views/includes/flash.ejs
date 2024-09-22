@@ -1,0 +1,38 @@
+
+<div>
+    <!-- Success Alert -->
+    <% if (successMsg && successMsg.length > 0) { %>
+        <div 
+            class="alert alert-success alert-dismissible fade show my-2" 
+            role="alert"
+            style="max-width: 50%; height: auto; margin: 0 auto;"
+        >
+            <p class="mb-0 fw-medium fs-4 text-center"><%= successMsg %></p>
+            <button 
+                type="button" 
+                class="btn-close" 
+                data-dismiss="alert"
+                aria-label="Close"
+            >
+            </button>
+        </div>
+    <% } %>
+    
+    <% if (errMsg && errMsg.length > 0) { %>
+        <div 
+            class="alert alert-danger alert-dismissible fade show my-2" 
+            role="alert"
+            style="max-width: 50%; height: auto; margin: 0 auto;"
+        >
+            <p class="mb-0 fw-medium fs-4 text-center"><%= errMsg %></p>
+            <button 
+                type="button" 
+                class="btn-close" 
+                data-dismiss="alert"
+                aria-label="Close"
+            >
+            </button>
+        </div>
+    <% } %>
+    
+</div>

@@ -1,0 +1,225 @@
+/* Flexbox for filter navigation */
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    min-height: 460px;
+    margin-bottom: 1rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+textarea,
+input::placeholder {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.custom-input-font-size {
+    font-size: 1.25rem !important; /* Smaller font size for a compact look */
+}
+
+input {
+    font-size: 20px !important;
+    font-weight: normal;
+}
+
+.searchInput {
+    width: 100% !important;
+    max-width: 800px;
+    padding: 12px 20px !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    border: 1px solid #ccc !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.searchInput:focus {
+    border-color: #000000 !important;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6) !important;
+    outline: none !important;
+}
+
+.searchInput::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    height: 1500px; /* Example content height to enable scrolling */
+}
+
+#map {
+    width: 100%;
+    height: 500px; /* Set the height for the map container */
+}
+
+.listing-card {
+    width: 350px !important; /* Fixed width */
+    height: 300px; /* Fixed height */
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    /* Smooth transitions for transform and box-shadow */
+}
+
+.listing-card img {
+    height: 200px; /* Fixed height for image */
+    width: 100% !important; /* Full width */
+    object-fit: cover; /* Ensure image covers the area */
+    margin: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.listing-card:hover {
+    transform: scale(1.15); /* Slightly zoom in */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.custom-alert {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.custom-alert-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.alert-success.custom-alert {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger.custom-alert {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.btn-close {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.filter a {
+    color: #898989;
+}
+
+.filter a:hover {
+    color: #f77777;
+}
+
+/* Media Queries */
+
+/* Extra small devices (mobiles, 576px and below) */
+@media (max-width: 576px) {
+    .listing-card {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .listing-card img {
+        height: auto;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .custom-alert {
+        max-width: 100%;
+    }
+    
+    .searchInput {
+        font-size: 16px !important;
+        padding: 10px !important;
+    }
+
+    input {
+        font-size: 16px !important;
+    }
+
+    textarea {
+        font-size: 16px !important;
+    }
+
+    .custom-input-font-size {
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and below) */
+@media (max-width: 768px) {
+    .listing-card {
+        width: 100% !important;
+        height: auto;
+    }
+
+    .listing-card img {
+        height: 250px;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    .custom-alert {
+        max-width: 90%;
+    }
+    
+    .searchInput {
+        font-size: 18px !important;
+    }
+
+    input {
+        font-size: 18px !important;
+    }
+
+    textarea {
+        font-size: 18px !important;
+    }
+
+    .custom-input-font-size {
+        font-size: 1.15rem !important;
+    }
+}
+
+/* Large devices (desktops, 992px and below) */
+@media (max-width: 992px) {
+    .listing-card {
+        width: 80% !important;
+        height: auto;
+    }
+
+    .listing-card img {
+        height: 300px;
+    }
+
+    #map {
+        height: 450px;
+    }
+
+    .custom-alert {
+        max-width: 85%;
+    }
+}

@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-between filter rounded-pill mt-4 bg-light text-dark flex-wrap">
+    
+    <ul id="filterList" class="d-flex align-items-center navbar-nav flex-row flex-wrap">
+        <% for(let filterElement of FilterTypes) { %>
+            <li class="nav-item mx-4 mb-2">
+                <a 
+                class="nav-link fw-bold fs-4" 
+                href="/listings/filter/<%=filterElement%>">
+                <i class="fa-solid fa-<%=filterElement%>"></i></a>
+            </li>
+        <% } %>                      
+    </ul>
+    
+    <!-- Display total after taxes Checkbox -->          
+    <div class="checkbox-wrapper-14 bg-light border-dark m-4 d-flex align-items-center border ms-2 p-2">
+        <label for="s1-14" class="ms-2 mb-0 fs-5">Display total after taxes</label>
+        <input id="s1-14" type="checkbox" class="switch ms-2">
+    </div>
+</div>

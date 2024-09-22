@@ -1,0 +1,69 @@
+<% layout("layouts/boilerplate") -%>
+
+<div class="newForm fs-5 fw-medium w-100 h-80">
+    <form 
+        method="POST" 
+        action="/signUp" 
+        class="mb-2 ms-4 mt-4 overflow-hidden needs-validation d-flex flex-column justify-content-center align-items-center" 
+        novalidate
+    >
+    
+        <h3 class="mb-2 w-50 h-20 mt-4 fs-2 text-center">
+            SignUp on <b style="color: red;">NestAway</b>
+        </h3>
+
+        <div class="mb-2 w-50 w-md-50 h-25">
+            <label for="usernameId" class="form-label">Username</label>
+            <input 
+                required 
+                type="text" 
+                class="form-control custom-input-font-size" 
+                name="newUser[username]" 
+                placeholder="Set your username" 
+                id="usernameId"
+            />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">username can't be empty!</div>
+        </div>
+
+        <div class="mb-2 w-50  w-md-50 h-25">
+            <label for="EmailId" class="form-label">Email</label>
+            <input 
+                required 
+                type="email" 
+                class="form-control custom-input-font-size" 
+                name="newUser[email]" 
+                placeholder="xyz@example.com" 
+                id="EmailId"
+            />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">It is not valid email</div>
+        </div>
+
+        <div class="mb-2 w-50 w-md-50 h-25">
+            <label for="PasswordId" class="form-label">Password</label>
+            <input 
+                required 
+                type="password" 
+                class="form-control custom-input-font-size" 
+                name="newUser[password]" 
+                placeholder="Set your unique password" 
+                id="PasswordId"
+            />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">It is not valid password</div>
+        </div>
+
+        <button 
+            type="submit" 
+            class="btn btn-outline-dark fs-5 mt-4 fw-medium btn-sm"
+        >
+            SignUp
+        </button>
+
+        <p class="m-4">Have an account? <a href="/login" class="text-decoration-none ms-2">Login</a>
+        </p>
+
+
+    </form>
+</div>

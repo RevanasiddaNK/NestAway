@@ -1,0 +1,131 @@
+<% layout("layouts/boilerplate") -%>
+
+<div class="newForm fs-5 fw-medium w-100 h-80">
+  <form 
+    method="POST" 
+    enctype="multipart/form-data" 
+    action="/listings/edit/<%= EditListing._id %>?_method=PUT" 
+    class="needs-validation mb-3 ms-6 mt-6 overflow-hidden d-flex flex-column justify-content-center align-items-center" 
+    novalidate>
+    
+    <!-- Form Title -->
+    <h2 class="mb-3 w-50 mt-5 text-center">
+      Edit Listing of <i class="fw-bolder"><%= EditListing.title %></i>
+    </h2>
+    
+    <!-- Listing Image -->
+    <div class="mb-3 d-flex justify-content-center">
+      <img 
+        src="<%= EditImage %>" 
+        style="height: 150px; width: 200px;" 
+        alt="Error in rendering image" />
+    </div>
+
+    <!-- Title Input -->
+    <div class="mb-3 w-50">
+      <label for="TitleId" class="form-label">Title</label>
+      <input 
+        required 
+        class="form-control custom-input-font-size" 
+        value="<%= EditListing.title %>" 
+        name="newListing[title]" 
+        placeholder="Add a catchy Title" 
+        id="TitleId" />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please provide a valid title</div>
+    </div>
+
+    <!-- Description Input -->
+    <div class="mb-3 w-50">
+      <label for="DescriptionId" class="form-label">Description</label>
+      <textarea 
+        class="form-control custom-input-font-size" 
+        name="newListing[description]" 
+        rows="3" 
+        id="DescriptionId" 
+        required><%= EditListing.description %></textarea>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please provide a valid description</div>
+    </div>
+
+    <!-- Type of Listing Input -->
+    <div class="mb-3 w-50">
+      <label class="form-label" for="inputGroupSelect01">Type of Listing</label>
+      <select 
+        class="form-control custom-input-font-size" 
+        name="newListing[filterType]" 
+        id="inputGroupSelect01" 
+        required>
+        <option selected>Choose...</option>
+        <% for(let filterElement of FilterTypes) { %>
+          <option value="<%= filterElement %>"><%= filterElement %></option>
+        <% } %> 
+      </select>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please select a type of listing</div>
+    </div>
+
+    <!-- Image File Input -->
+    <div class="mb-3 w-50">
+      <label for="ImagefileId" class="form-label">Update Listing Image</label>
+      <input 
+        class="form-control custom-input-font-size" 
+        name="EditListing[Imagefile]" 
+        type="file" 
+        id="ImagefileId">
+    </div>
+
+    <!-- Price and Country Inputs -->
+    <div class="mb-3 w-50">
+      <div class="row">
+        <div class="col-6">
+          <label for="PriceId" class="form-label">Price (in &#8377;)</label>
+          <input 
+            class="form-control custom-input-font-size" 
+            value="<%= EditListing.price %>" 
+            name="newListing[price]" 
+            id="PriceId" 
+            placeholder="1800" 
+            required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid price</div>
+        </div>
+
+        <div class="col-6">
+          <label for="countryId" class="form-label">Country</label>
+          <input 
+            class="form-control custom-input-font-size" 
+            value="<%= EditListing.country %>" 
+            name="newListing[country]" 
+            id="countryId" 
+            placeholder="India" 
+            required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide a valid country</div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Location Input -->
+    <div class="mb-3 w-50">
+      <label for="LocationId" class="form-label">Location</label>
+      <input 
+        class="form-control custom-input-font-size" 
+        value="<%= EditListing.location %>" 
+        name="newListing[location]" 
+        id="LocationId" 
+        placeholder="Bengaluru, Karnataka" 
+        required />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">Please provide a valid location</div>
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      class="btn btn-outline-dark fs-4 fw-medium">
+      Submit
+    </button>
+  </form>
+</div>
