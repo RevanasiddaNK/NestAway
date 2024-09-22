@@ -18,6 +18,7 @@ const userRouter = require("./routers/user.js");
 const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const User = require("./models/User.js");
+const { Listing } = require("./models/Listing.js");
 
 // Initialize the Express app
 const app = express();
@@ -90,10 +91,12 @@ const MongooseOptions = {
     useFindAndModify: false,
     useCreateIndex: true,
 };
-const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1/NestAwayAppDataBase'; // Use environment variable for MongoDB URL
+
+const MONGO_URI = process.env.MONGO_URI; ;
+
 
 mongoose.Promise = global.Promise;
-mongoose.connect(mongoUrl, MongooseOptions)
+mongoose.connect(MONGO_URI)
     .then(() => console.log("Connection successful"))
     .catch(err => console.log(`Error Occurred: ${err}`));
 
@@ -102,11 +105,6 @@ const port = process.env.PORT || 8080; // Use environment variable for port
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
-
-// Deployment
-
-
-
 
 // Global error-handling middleware
 app.use((err, req, res, next) => {
