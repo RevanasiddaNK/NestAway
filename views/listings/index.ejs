@@ -1,0 +1,29 @@
+<% layout("layouts/boilerplate") -%>
+<%- include("../includes/filter.ejs") %>
+
+
+    <div class="container mx-auto mt-2 overflow-hidden">
+        <div class="text-center">
+            <!-- Listings Grid -->
+            <div class="row row-cols-1 w-100 row-cols-md-3 g-4 m-4 justify-content-center">
+                <% for (let listing of allListings) { %>
+                    <div class="col d-flex justify-content-center">
+                        <a href="/listings/<%= listing._id %>" class="btn listing-card border-0 d-flex flex-column">
+                            
+                            <!-- Listing Image -->
+                            <img class="card-img-top index_card-img-top rounded-top-4" src="<%= listing.image.url %>" alt="<%= listing.title %> image">
+                            
+                            <!-- Listing Details -->
+                            <div class="card-body index_card-body listing-card-body">
+                                <h5 class="card-title index_card-title fs-5 mt-2"><%= listing.title %></h5>
+                                <p class="card-text fs-5 index_card-text price" data-original-price ="<%= listing.price %>">&#8377; <%= listing.price.toLocaleString("en-IN") %> / night</p>
+                            </div>
+
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+

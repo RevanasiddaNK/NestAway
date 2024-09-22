@@ -1,0 +1,50 @@
+
+    <!-- Navbar content -->
+    <div class="p-4 bg-light " id="navbarText">
+
+      <ul class="navbar navbar-expand-lg navbar-nav   d-flex flex-row align-items-center justify-content-around">
+
+         <!-- Brand Logo and Name -->
+        <li>   
+          <a class="navbar-brand d-flex align-items-center " href="/listings">
+            <h1 class="text-danger fw-bolder  fs-1 mb-0">
+              <i class="fa-solid  fa-house-user"></i> <!-- Bootstrap icon -->
+              NestAway
+            </h1>
+          </a>
+        </li>
+
+        <!-- Search Form -->
+        <li class="nav-item">
+          <form method="get" action="/listings/search" class="input-group">
+            <div class="form-outline d-flex" data-mdb-input-init>
+              <input id="search-focus" 
+                <% if (typeof query !== 'undefined' && query) { %> 
+                  value="<%= query %>" 
+                <% } %>
+                type="search" 
+                id="form1" 
+                placeholder="Search your destination"
+                name="searchQuery" 
+                class="form-control w-80  searchInput rounded-start-pill " 
+                />
+            </div>
+            <button type="submit" class="btn btn-danger  w-20 rounded-end-pill" data-mdb-ripple-init>
+              <i class="bi bi-search"></i> Search
+            </button>
+          </form>
+        </li>
+        
+        <!-- User Authentication Links -->
+        <li class="nav-item d-flex align-items-center ms-4">
+          <% if (!currentUser) { %>
+            <a href="/signUp" class="btn btn-outline-dark btn-sm border-0 fs-5 ms-2">SignUp</a>
+            <a href="/login" class="btn btn-outline-dark border-0 btn-sm fs-5 fw-sm  ms-2">Login</a>
+          <% } else { %>
+            <a href="/listings/new" class="btn btn-outline-dark btn-sm border-0  fs-5 ms-2">Add your home</a>
+            <a href="/logout" class="btn btn-outline-dark border-0 btn-sm fs-5  ms-2">Logout</a>
+          <% } %>
+        </li>
+
+      </ul>
+    </div>

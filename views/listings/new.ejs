@@ -1,0 +1,78 @@
+<% layout("layouts/boilerplate") -%>
+
+<div class="newForm fs-4 fw-medium w-100 h-100">
+    <form method="POST" action="/listings" enctype="multipart/form-data" class="mb-3 ms-6 mt-6 overflow-hidden needs-validation d-flex flex-column justify-content-center align-items-center" novalidate>
+        
+        <!-- Form Title -->
+        <h1 class="mb-3 w-75 h-25 mt-5 fw-bolder">Create a New Listing</h1>
+
+        <!-- Title Input -->
+        <div class="mb-3 w-75 h-35">
+            <label for="TitleId" class="form-label">Title</label>
+            <input required class="form-control custom-input-font-size" name="newListing[title]" placeholder="Add a catchy Title" id="TitleId">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid title</div>
+        </div>
+
+        <!-- Description Input -->
+        <div class="mb-3 w-75 h-25">
+            <label for="DescriptionId" class="form-label">Description</label>
+            <textarea required class="form-control custom-input-font-size" name="newListing[description]" rows="3" cols="15" id="DescriptionId"></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid description</div>
+        </div>
+
+        <div class="mb-3 w-75">
+            <label class="form-label" for="inputGroupSelect01">Type of Listing</label>
+            <select 
+              class="form-control custom-input-font-size" 
+              name="newListing[filterType]" 
+              id="inputGroupSelect01" 
+              required>
+              <option selected>Choose...</option>
+              <% for(let filterElement of FilterTypes) { %>
+                <option value="<%= filterElement %>"><%= filterElement %></option>
+              <% } %> 
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please select a type of listing</div>
+          </div>
+
+        <!-- Image File Input -->
+        <div class="mb-3 w-75 h-25">
+            <label for="ImagefileId" class="form-label">Upload Listing Image</label>
+            <input required class="form-control custom-input-font-size" name="newListing[Imagefile]" type="file" id="ImagefileId">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid Image</div>
+        </div>
+
+
+
+        <!-- Price and Country Inputs -->
+        <div class="mb-3 mx-2 w-75 h-25 d-flex row-cols-12">
+            <div class="col-6">
+                <label for="PriceId" class="form-label">Price</label>
+                <input required class="form-control custom-input-font-size" name="newListing[price]" id="PriceId" placeholder="1800">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid price</div>
+            </div>
+            <div class="col-6 mx-2">
+                <label for="countryId" class="form-label">Country</label>
+                <input required class="form-control custom-input-font-size" name="newListing[country]" id="countryId" placeholder="India">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid country name</div>
+            </div>
+        </div>
+
+        <!-- Location Input -->
+        <div class="mb-3 w-50 h-25 w-75 needs-validation">
+            <label for="LocationId" class="form-label">Location</label>
+            <input required class="form-control custom-input-font-size" name="newListing[location]" id="LocationId" placeholder="Bengaluru, Karnataka">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid location</div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-outline-dark w-50  fs-4 fw-sm">Submit</button>
+    </form>
+</div>
